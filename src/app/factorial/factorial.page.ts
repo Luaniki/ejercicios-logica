@@ -22,4 +22,23 @@ export class FactorialPage implements OnInit {
     this.router.navigateByUrl('home');
   }
 
+  n!: number;
+  facto!: number;
+
+  fact(){
+
+    if(this.n < 0){
+      alert('¡Error! Los números negativos no tienen factoriales')
+    } else if (this.n === 0){
+      alert('El factorial de 0 es 1')
+    } else {
+      let facto = 1;
+      for (let i = 1; i <= this.n; i++){
+        facto *= i;
+      }
+      alert("El factorial de " + this.n + " es: " + facto)
+    }
+
+  }
+
 }

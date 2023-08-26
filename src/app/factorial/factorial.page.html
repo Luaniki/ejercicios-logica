@@ -11,6 +11,15 @@
     </ion-toolbar>
   </ion-header>
 
+  <ion-item>
+    <ion-label position="floating">Número</ion-label>
+    <ion-input type="number" placeholder="Ingrese el número del que desea averiguar sus factoriales" [(ngModel)]="n"></ion-input>
+  </ion-item>
+
+  <ion-button expand="full" (click)="fact()">Factorial</ion-button>
+
+  <ion-item>El factorial de {{this.n}} es {{this.facto}}</ion-item>
+
   <div id="container">
     <ion-button (click)="onClickIrHome()">Volver</ion-button>
   </div>
