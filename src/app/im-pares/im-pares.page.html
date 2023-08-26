@@ -11,6 +11,14 @@
     </ion-toolbar>
   </ion-header>
 
+  <ion-item>
+    <ion-label position="floating">Número</ion-label>
+    <ion-input type="number" placeholder="Ingrese el número mayor del que saldrán los números pares/impares" [(ngModel)]="n"></ion-input>
+  </ion-item>
+
+  <ion-button expand="full" (click)="numPares()">Pares</ion-button>
+  <ion-button expand="full" (click)="numImpares()">Impares</ion-button>
+
   <div id="container">
     <ion-button (click)="onClickIrHome()">Volver</ion-button>
   </div>

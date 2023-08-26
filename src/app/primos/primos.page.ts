@@ -36,7 +36,7 @@ export class PrimosPage implements OnInit {
           }
       }
   
-      if (i > 1 && flag == 0) {
+      if (i >= 1 && flag == 0) {
           alert(i);
       }
   }

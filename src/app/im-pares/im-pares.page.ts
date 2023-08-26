@@ -22,4 +22,26 @@ export class ImParesPage implements OnInit {
     this.router.navigateByUrl('home');
   }
 
+  n!:number;
+
+  numPares(){
+
+    for (let i = 1; i <= this.n; i++) {
+  
+      if (i > 1 && i % 2 == 0) {
+          alert(i);
+      }
+    }
+  }
+
+  numImpares(){
+
+    for (let i = 1; i <= this.n; i++) {
+  
+      if (i >= 1 && i % 2 !== 0) {
+          alert(i);
+      }
+    }
+  }
+
 }
