@@ -1,7 +1,7 @@
 <ion-header [translucent]="true">
   <ion-toolbar>
     <ion-title>
-      Blank
+      Ejercicios
     </ion-title>
   </ion-toolbar>
 </ion-header>
@@ -13,8 +13,22 @@
     </ion-toolbar>
   </ion-header>
 
-  <div id="container">
-    <strong>Ready to create an app?</strong>
-    <p>Start with Ionic <a target="_blank" rel="noopener noreferrer" href="https://ionicframework.com/docs/components">UI Components</a></p>
-  </div>
+  <ion-list lines="none" id="container">
+    <ion-item>
+      <ion-button (click)="onClickIrFibonacci()">Serie de Fibonacci</ion-button>
+    </ion-item>
+    <ion-item>
+      <ion-button (click)="onClickIrFactorial()">Factoriales</ion-button>
+    </ion-item>
+    <ion-item>
+      <ion-button (click)="onClickIrPrimos()">Números Primos</ion-button>
+    </ion-item>
+    <ion-item>
+      <ion-button (click)="onClickIrImpares()">Pares e Impares</ion-button>
+    </ion-item>
+    <ion-item>
+      <ion-button (click)="onClickIrConjuntos()">Conjuntos</ion-button>
+    </ion-item>
+  </ion-list>
+
 </ion-content>
