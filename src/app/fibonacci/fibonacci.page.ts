@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
-import { IonInput, IonicModule } from '@ionic/angular';
+import { IonicModule } from '@ionic/angular';
 import { Router, RouterModule } from '@angular/router';
 
 @Component({
@@ -13,8 +13,6 @@ import { Router, RouterModule } from '@angular/router';
 })
 export class FibonacciPage implements OnInit {
 
-  public arr: number[] = [];
-
   constructor(private router:Router) { }
 
   ngOnInit() {
@@ -24,16 +22,23 @@ export class FibonacciPage implements OnInit {
     this.router.navigateByUrl('home');
   }
 
-  calcularSerieFibonacci(n:number) {
-    let a = 0;
-    let b = 1;
-    this.arr = [a, b];
+  n!: number;
+  fibSer: number[] = [];
 
-    for (let i = 1; i <= n; i++) {
+  fib()
+    {
+        this.fibSer = [];
 
+        let n1 = 0;
+        let n2 = 1;
+        for (let i = 0; i <= this.n; i++)
+        {
+            this.fibSer.push(n1);
+            const sig = n1 + n2;
+            n1 = n2;
+            n2 = sig;
+        }
     }
-
-  }
 
 }
 

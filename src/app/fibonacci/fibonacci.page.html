@@ -12,8 +12,19 @@
   </ion-header>
 
   <div id="container">
-    <ion-input type="number" label="Introduzca un número"></ion-input>
+    <ion-item>
+      <ion-label position="floating">Posición</ion-label>
+      <ion-input type="number" placeholder="Ingrese la cantidad de posiciones en la serie que desea averiguar" [(ngModel)]="n"></ion-input>
+    </ion-item>
+  
+    <ion-button expand="full" (click)="fib()">Serie Fibonacci</ion-button>
+  
+    <ion-list *ngIf="fibSer.length > 0">
+      <ion-item *ngFor="let num of fibSer; let i = index">
+        {{ i }}: {{ num }}
+      </ion-item>
+    </ion-list>
     <ion-button (click)="onClickIrHome()">Volver</ion-button>
   </div>
-  
+
 </ion-content>
