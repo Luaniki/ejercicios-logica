@@ -11,8 +11,34 @@
     </ion-toolbar>
   </ion-header>
 
+  <form (ngSubmit)="crearArrayConValores()">
+    <label for="tamanio">Tamaño del array:</label>
+    <input type="number" id="tamanio" name="tamanio" [(ngModel)]="tamanioArray" required>
+    <div *ngFor="let numero of nuevoArray; let i = index">
+      <label for="valor{{ i }}">Valor {{ i + 1 }}:</label>
+      <input type="number" [id]="'valor' + i" [name]="'valor' + i" [(ngModel)]="nuevoArray[i]" required>
+    </div>
+    <button type="submit">Crear Array 1</button>
+  </form>
+
+  <form (ngSubmit)="crearArrayConValores()">
+    <label for="tamanio">Tamaño del array:</label>
+    <input type="number" id="tamanio" name="tamanio" [(ngModel)]="tamanioArray" required>
+    <div *ngFor="let numero of nuevoArray2; let i = index">
+      <label for="valor{{ i }}">Valor {{ i + 1 }}:</label>
+      <input type="number" [id]="'valor' + i" [name]="'valor' + i" [(ngModel)]="nuevoArray2[i]" required>
+    </div>
+    <button type="submit">Crear Array 2</button>
+  </form>
+
+  <ul *ngIf="nuevoArray.length > 0">
+    <li *ngFor="let numero of nuevoArray">{{ numero }}</li>
+  </ul>
+
+  <ion-button (click)="unionArray(nuevoArray, nuevoArray2)"> Unión de conjuntos </ion-button>
+  <ion-button (click)="interseccionArray(nuevoArray, nuevoArray2)"> Intersección de conjuntos </ion-button>
+
   <div id="container">
     <ion-button (click)="onClickIrHome()">Volver</ion-button>
   </div>
-
 </ion-content>

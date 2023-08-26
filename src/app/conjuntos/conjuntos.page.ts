@@ -22,4 +22,43 @@ export class ConjuntosPage implements OnInit {
     this.router.navigateByUrl('home');
   }
 
+  nuevoArray: number[] = [];
+  nuevoArray2: number[] = [];
+  tamanioArray!: number;
+
+  crearArrayConValores() {
+  }
+
+  unionArray(nuevoArray: string | any[], nuevoArray2: any){
+
+    let arr = nuevoArray.concat(nuevoArray2);
+    let uniqueArr = [];
+
+    for(let i of arr) {
+        if(uniqueArr.indexOf(i) === -1) {
+            uniqueArr.push(i);
+        }
+    }
+    alert(uniqueArr);
+}
+
+interseccionArray(nuevoArray: string | any[], nuevoArray2: any) {
+
+  const setA = new Set(nuevoArray);
+  const setB = new Set(nuevoArray2);
+
+  let interseccionFinal = [];
+
+  for (let i of setB) {
+  
+      if (setA.has(i)) {
+          interseccionFinal.push(i);
+      }
+      
+  }
+  
+  alert(interseccionFinal);
+
+}
+
 }
