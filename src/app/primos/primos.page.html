@@ -11,6 +11,13 @@
     </ion-toolbar>
   </ion-header>
 
+  <ion-item>
+    <ion-label position="floating">Número</ion-label>
+    <ion-input type="number" placeholder="Ingrese el número máximo para hallar los números primos" [(ngModel)]="n"></ion-input>
+  </ion-item>
+
+  <ion-button expand="full" (click)="primos()">Números Primos</ion-button>
+
   <div id="container">
     <ion-button (click)="onClickIrHome()">Volver</ion-button>
   </div>
